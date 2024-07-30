@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+    --purple: #c36333;
+    --light-purple: #62a6ff;
+    --lighter-purple: #003afa;
+    --green: #66A663;
+    --white: #fff;
+    --orange: #dbac36;
+}
+body {
+    background-color: var(--purple);
+    margin: 20px;
+}
+.launch {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.launch.disabled {
+    display: none;
+}
+.launchForm {
+    background-color: var(--light-purple);
+    border: 5px solid var(--white);
+    border-radius: 20px;
+    padding: 20px;
+}
+.launchForm h2 {
+    text-align: center;
+}
+.launchForm input {
+    margin-top: 15px;
+    background-color: var(--lighter-purple);
+    color: var(--purple);
+    outline: 0;
+    border: none;
+    width: 100%;
+    font-size: 24px;
+    border-radius: 5px;
+    padding: 5px;
+}
+header {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background-color: var(--light-purple);
+    border-radius: 20px;
+}
+.logo {
+   width: 80px;
+}
+main {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap-reverse;
+}
+.exit {
+    color: var(--lighter-purple);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.exit:hover {
+    color: var(--white);
+}
+.gameArea {
+    padding: 20px 0;
+    display: flex;
+    background-color: var(--light-purple);
+    border-radius: 20px;
+    flex-grow: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.gameField {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(8, 30px);
+    gap: 6px;
+}
+.cell {
+    background-color: var(--purple);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    line-height: 30px;
+}
+.cell.active {
+    background-color: var(--lighter-purple);
+    cursor: pointer;
+}
+.cell.flag {
+    background-image: url('./little_flag.jpg');
+    background-size: cover;
+    background-color: var(--green);
+    background-repeat: no-repeat;
+}
+.cell.bomb {
+    background-image: url('./bomb.png');
+    background-size: cover;
+    background-color: #ed9590;
+    background-repeat: no-repeat;
+}
+.cell.active:not(.flag):hover {
+    opacity: 0.7;
+}
+.gameSettings {
+    padding: 40px 20px;
+    background-color: var(--light-purple);
+    border-radius: 20px;
+    flex-grow: 1;
+}
+.gameSettings h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.score {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 30px;
+}
+.point {
+    padding: 8px 0;
+    margin: 10px;
+    background-color: var(--purple);
+    text-align: center;
+    border-radius: 20px;
+    flex-basis: 150px;
+     flex-grow: 1;
+    font-size: 21px;
+    cursor: pointer;
+}
+.point.active {
+    background-color: var(--orange);
+}
+.input {
+    display: none;
+}
+#gameBtn {
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 40px;
+    background-color: var(--green);
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+.disabled_button {
+    pointer-events: none;
+    opacity: 0.5;
+}
+.failure {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    flex-grow: 1;
+    padding: 40px;
+}
+.failure h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+#newGame {
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 40px;
+    background-color: rgb(0, 128, 255);
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+.victory {
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    flex-grow: 1;
+    padding: 40px;
+}
+.victory h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+    
